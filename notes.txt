@@ -1,0 +1,53 @@
+Results
+Array Size:     extraLargeArray          LargeArray          mediumArray     smallArray      tinyArray
+insert :        790.7365 ms              9.430292 ms         121.625 μs      35.958 μs       18.792 μs
+append :        2.256458 ms              594.333 μs          134.875 μs      136.583 μs      82.166 μs
+
+from the results above, the pattern observed is that the insert function takes more time on large and extra-
+large arrays, while it takes less time on the medium, small and tiny array. 
+
+The append array takes even lesser time depending on the size of the array, the extra-large and large array
+takes the most time and the medium, small and tiny array takes less and less time.
+
+The notable difference in the two functions is that insert function takes lesser time on the medium, small and tiny
+array than the append function, while the append function takes lesser time on the extralarge and large array than 
+the insert function.
+
+In my opinion, i would say the insert function is good for smaller arrays while the append function is good for large
+arrays, but generally the append function scales better in that it takes less time overall on any type of array given,
+be it extra large, large, medium, small, or tiny.
+
+The insert function is slower because its using unshift() and under the hood its having to insert the value and also
+having to reassign a new index to all the values in the array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Results for the LargeArray
+insert 9.430292 ms
+append 594.333 μs
+
+Results for the tinyArray
+insert 18.792 μs
+append 82.166 μs
+
+Results for the smallArray
+insert 35.958 μs
+append 136.583 μs
+
+Results for the mediumArray
+insert 121.625 μs
+append 134.875 μs
